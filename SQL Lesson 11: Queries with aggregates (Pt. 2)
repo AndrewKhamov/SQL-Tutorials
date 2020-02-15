@@ -1,0 +1,24 @@
+Task 1
+Find the number of Artists in the studio (without a HAVING clause)
+
+SELECT COUNT(Role)
+FROM employees
+WHERE Role = 'Artist'
+GROUP BY building
+
+
+Task 2
+Find the number of Employees of each role in the studio 
+
+SELECT building, COUNT(Role)
+FROM employees
+GROUP BY role
+
+
+Task 3
+Find the total number of years employed by all Engineers
+
+SELECT role, SUM(Years_employed)
+FROM employees
+GROUP BY Role
+HAVING Role = 'Engineer'      #Можно было использовать здесь и where, разницы нет (только where идет до GROUP BY)
