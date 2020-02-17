@@ -1,0 +1,8 @@
+Task 1
+We've sadly reached the end of our lessons, lets clean up by removing the Movies table 
+
+DROP TABLE IF EXISTS movies
+
+Task 2
+
+DROP TABLE IF EXISTS boxoffice
