@@ -1,0 +1,39 @@
+# Checking a list The word IN allows us to check if an item is in a list.#
+<h1> The example shows the name and population for the countries 'Brazil', 'Russia', 'India' and 'China'.
+
+SELECT name, population FROM world
+  WHERE name IN ('Brazil', 'Russia', 'India', 'China');
+  
+ 
+BETWEEN allows range checking (range specified is inclusive of boundary values). 
+ The example below shows countries with an area of 250,000-300,000 sq. km.
+  
+  SELECT name, area FROM world
+  WHERE area BETWEEN 250000 AND 300000
+  
+
+You can use WHERE name LIKE 'B%' to find the countries that start with "B".
+The % is a wild-card it can match any characters
+
+SELECT name FROM world
+  WHERE name LIKE 'B%'
+  
+  
+ India and Angola have an n as the second character. You can use the underscore as a single character wildcard.
+ 
+ SELECT name FROM world
+ WHERE name LIKE '_n%'
+ORDER BY name
+
+
+Find the countries that have exactly four characters.
+
+SELECT name FROM world
+ WHERE name LIKE '____'
+ 
+ 
+Find the country where the name is the capital city.
+
+SELECT name
+  FROM world
+ WHERE name LIKE capital
