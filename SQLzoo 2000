@@ -1,7 +1,7 @@
-!IN
-!XOR Exclusive OR (XOR) Either one or another, but not both
+!IN       The expression subject IN ('Chemistry','Physics') can be used as a value - it will be 0 or 1.
+!XOR      Exclusive OR (XOR) Either one or another, but not both
 !REPLACE
-!concat
+!concat   The function concat is short for concatenate - you can use it to combine two or more strings. capital LIKE concat('%', name, '%')
 
 
 !ROUND(f,p) returns f rounded to p decimal places.
