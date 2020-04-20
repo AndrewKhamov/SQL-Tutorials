@@ -34,3 +34,13 @@ SELECT name
  WHERE population >= ALL(SELECT population
                            FROM world
                           WHERE population>0)
+
+
+
+Show the stadium and the number of goals scored in each stadium.
+SELECT stadium, COUNT(player)
+FROM game JOIN goal ON game.id = goal.matchid
+GROUP BY stadium
+!!! Если мы делаем GROUP BY стадион, то весь запрос начинает рассматриваться как запрос по стадиону, 
+то есть даже COUNT будет считать кол-во игроков на конкретном стадионе!!! (А игроков мы считаем,
+потому что запись о каждом игроке означает гол в той таблице)
