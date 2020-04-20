@@ -44,3 +44,15 @@ GROUP BY stadium
 !!! Если мы делаем GROUP BY стадион, то весь запрос начинает рассматриваться как запрос по стадиону, 
 то есть даже COUNT будет считать кол-во игроков на конкретном стадионе!!! (А игроков мы считаем,
 потому что запись о каждом игроке означает гол в той таблице)
+
+
+
+! CASE WHEN
+SELECT name, population
+      ,CASE WHEN population<1000000 
+            THEN 'small'
+            WHEN population<10000000 
+            THEN 'medium'
+            ELSE 'large'
+       END
+  FROM bbc
