@@ -26,3 +26,11 @@ Task 16
 SELECT DISTINCT x.model, y.model, x.speed, x.ram
 FROM PC x, PC y
 WHERE x.speed = y.speed AND x.ram = y.ram AND x.model > y.model
+
+
+Task 17
+
+SELECT DISTINCT 'Laptop' AS type, model, speed
+FROM Laptop
+WHERE speed < ALL(SELECT speed FROM PC)
+
