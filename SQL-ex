@@ -29,8 +29,18 @@ WHERE x.speed = y.speed AND x.ram = y.ram AND x.model > y.model
 
 
 Task 17
+Найдите модели ПК-блокнотов, скорость которых меньше скорости каждого из ПК.
+Вывести: type, model, speed
 
 SELECT DISTINCT 'Laptop' AS type, model, speed
 FROM Laptop
 WHERE speed < ALL(SELECT speed FROM PC)
 
+
+Task 18
+Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price
+
+SELECT DISTINCT maker, price
+FROM Product, Printer 
+WHERE Product.model = Printer.model AND  printer.color = 'y' AND
+price = (SELECT MIN(price) from Printer WHERE color = 'y')
