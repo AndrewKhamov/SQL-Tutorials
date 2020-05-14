@@ -74,3 +74,20 @@ SELECT name, population
   ORDER BY MONTH(date), DAY(date);
 
 
+  ! Есть операции пересечения INTERSECT, объединения UNION и исключения EXCEPT, как с кругами Эйлера.
+  Следующие два запроса имеют один и тот же смысл.
+  SELECT * FROM product
+WHERE (maker = 'A' OR maker = 'B') AND type = 'pc';
+ 
+  SELECT * FROM product
+WHERE maker = 'A' OR maker = 'B'
+INTERSECT
+SELECT * FROM product
+WHERE  type = 'pc';
+  
+  
+  
+  
+  
+  
+  
