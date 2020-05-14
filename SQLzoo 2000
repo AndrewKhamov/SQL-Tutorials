@@ -65,3 +65,12 @@ SELECT name, population
   COALESCE(x,y,z) = y if x is NULL and y is not NULL
   COALESCE(x,y,z) = z if x and y are NULL but z is not NULL
   COALESCE(x,y,z) = NULL if x and y and z are all NULL
+
+
+  ! Здесь мы используем встроенные функции, которые возвращают компоненты даты - месяц (MONTH) и день (DAY) соответственно.
+(Чтобы сортировать дату по месяцам, не обращая внимания на год, например)
+  SELECT date 
+  FROM Battles 
+  ORDER BY MONTH(date), DAY(date);
+
+
