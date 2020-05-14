@@ -21,6 +21,21 @@ SELECT maker FROM Product
 WHERE type = 'Laptop'
 
 
+
+Task 7
+Найдите номера моделей и цены всех имеющихся в продаже продуктов (любого типа) производителя B (латинская буква)
+
+SELECT DISTINCT product.model, pc.price
+FROM Product JOIN pc ON product.model = pc.model WHERE maker = 'B'
+UNION
+SELECT DISTINCT product.model, laptop.price
+FROM product JOIN laptop ON product.model=laptop.model WHERE maker='B'
+UNION
+SELECT DISTINCT product.model, printer.price
+FROM product JOIN printer ON product.model=printer.model WHERE maker='B'
+
+
+
 Task 15
 Найдите размеры жестких дисков, совпадающих у двух и более PC. Вывести: HD
 
