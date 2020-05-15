@@ -86,7 +86,13 @@ SELECT * FROM product
 WHERE  type = 'pc';
   
   
-  
+  !Ниже приведен порядок обработки предложений в операторе SELECT:
+ FROM
+ WHERE
+ GROUP BY
+ HAVING
+ SELECT
+ ORDER BY
   
   
   
