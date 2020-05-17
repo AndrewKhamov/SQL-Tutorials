@@ -164,3 +164,12 @@ SELECT price FROM Printer LEFT JOIN Product ON Printer.model = Product.model
 WHERE maker = 'A'
 ) t1
 
+
+Task 32
+
+
+SELECT country, ROUND(POWER(AVG(bore), 3)/2, 2) as weight
+FROM classes 
+GROUP BY country
+
+
