@@ -194,4 +194,12 @@ WHERE upper(model) NOT like '%[^A-Z]%'
 OR model not like '%[^0-9]%'
 
 
+Task 36
+Перечислите названия головных кораблей, имеющихся в базе данных (учесть корабли в Outcomes).
+
+SELECT name 
+FROM ships
+Where class = name
+UNION
+SELECT ship from outcomes,classes where class = ship
 
