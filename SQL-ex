@@ -203,3 +203,46 @@ Where class = name
 UNION
 SELECT ship from outcomes,classes where class = ship
 
+
+
+SELECT class
+FROM ships
+GROUP BY class
+HAVING COUNT(name) = 1
+
+
+SELECT class
+FROM ships
+GROUP BY class
+HAVING COUNT(name) = 1
+UNION
+SELECT ship
+FROM outcomes, Classes
+WHERe classes.class = outcomes.ship
+
+
+
+Task 37
+Найдите классы, в которые входит только один корабль из базы данных (учесть также корабли в Outcomes)
+
+SELECT class
+FROM ships
+GROUP BY class
+HAVING COUNT(name) = 1
+UNION
+SELECT ship
+FROM outcomes, Classes
+WHERE classes.class = outcomes.ship
+
+
+Task 38
+Найдите страны, имевшие когда-либо классы обычных боевых кораблей ('bb') и имевшие когда-либо классы крейсеров ('bc').
+
+SELECT DISTINCT country
+FROM Classes 
+WHERE type = 'bb'
+INTERSECT
+SELECT DISTINCT country
+FROM Classes 
+WHERE type = 'bc'
+
