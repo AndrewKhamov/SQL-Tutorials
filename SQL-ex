@@ -269,3 +269,25 @@ FROM outcomes
 WHERE ship LIKE 'R%'
 
 
+
+Task 45
+Найдите названия всех кораблей в базе данных, состоящие из трех и более слов (например, King George V).
+Считать, что слова в названиях разделяются единичными пробелами, и нет концевых пробелов.
+
+SELECT name
+FROM ships 
+WHERE name LIKE '% % %'
+UNION 
+SELECT ship
+FROM outcomes
+WHERE ship LIKE '% % %'
+
+
+
+Task 46
+Для каждого корабля, участвовавшего в сражении при Гвадалканале (Guadalcanal), вывести название, водоизмещение и число орудий.
+
+SELECT ship, displacement, numGuns
+FROM outcomes LEFT JOIN ships on outcomes.ship = ships.name 
+              LEFT JOIN classes on ships.class = classes.class
+WHERE battle LIKE 'Guadalcanal'
