@@ -291,3 +291,21 @@ SELECT ship, displacement, numGuns
 FROM outcomes LEFT JOIN ships on outcomes.ship = ships.name 
               LEFT JOIN classes on ships.class = classes.class
 WHERE battle LIKE 'Guadalcanal'
+
+
+
+Task 48
+Найдите классы кораблей, в которых хотя бы один корабль был потоплен в сражении
+
+SELECT classes.class 
+FROM classes
+LEFT JOIN ships ON classes.class = ships.class
+LEFT JOIN Outcomes ON outcomes.ship = ships.name
+WHERE result LIKE 'sunk'
+### Если бы таблица была норм, то этого бы хватило, но в outcomes есть корабли, которые не указаны в ships, 
+### но их названия совпадают с названием классов, так что дальше:
+UNION
+SELECT class
+FROM outcomes, classes
+WHERE outcomes.ship = classes.class AND result = 'sunk'
+
