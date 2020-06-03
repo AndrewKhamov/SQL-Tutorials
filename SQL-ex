@@ -325,3 +325,23 @@ AND (numGuns >= 9 OR numguns IS NULL)
 AND (bore < 19 OR bore IS NULL)
 AND (displacement <= 65000 OR displacement IS NULL)
 
+
+
+
+SELECT c.class from classes c
+LEFT JOIN ships ON ships.class = c.class
+GROUP BY c.class
+HAVING COUNT(name) = 1
+UNION 
+
+
+SELECT ship
+FROM Outcomes, Classes
+WHERE ship = classes.class
+AND ship NOT IN (SELECT name FROM ships)
+
+
+
+
+
+
